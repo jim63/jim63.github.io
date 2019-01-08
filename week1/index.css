@@ -59,6 +59,12 @@ main {
   line-height: 200px
 }
 
+.secondtitle {
+  margin-top: 0px;
+  text-align: center;
+  line-height: 100px
+}
+
 article {
   background-color: chocolate
 }
