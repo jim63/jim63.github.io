@@ -24,6 +24,7 @@ nav {
   list-style: none;
   margin-left: 15px;
   font-size: 25px;
+  transition: transform 0.4s;
 }
 
 .navItem {
@@ -36,9 +37,14 @@ nav {
   justify-content: space-between;
 }
 
-a{
+a {
   text-decoration: none;
 }
+
+.navItem li:hover {
+  transform: rotate(20deg);
+}
+
 main {
   margin-top: 0px;
   height: 200px;
