@@ -36,6 +36,9 @@ nav {
   justify-content: space-between;
 }
 
+a{
+  text-decoration: none;
+}
 main {
   margin-top: 0px;
   height: 200px;
@@ -66,7 +69,28 @@ main {
 }
 
 article {
-  background-color: chocolate
+  background-color: chocolate;
+  border-radius: 5px;
+
+}
+
+.button {
+  border: 2px solid peru;
+  border-radius: 15px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 auto;
+  color: black;
+  background-color: peru;
+  font-size: 25px;
+  transition: background-color 0.4s;
+}
+
+.button:hover {
+  background-color: #F2FF49;
+  border: 2px solid #F2FF49;
 }
 
 @media (min-width:500px) and (max-width:800px) {
