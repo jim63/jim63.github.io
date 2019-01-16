@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="index.css">
+  <title>JIM63</title>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav">
+      <h2>JIM63</h2>
+      <div class="ham" id="ham">
+        <div class="menu bar1"></div>
+        <div class="menu bar2"></div>
+        <div class="menu bar3"></div>
+      </div>
+
+      <ul class="navItem">
+        <li><a href="#">map</a></li>
+        <li><a href="#">news</a></li>
+        <li><a href="#">career</a></li>
+        <li><a href="#">conatct</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <h1 id="heading" class="title">Hello Strangers !</h1>
+    </div>
+  </main>
+
+  <div class="secondTitle container">
+    <h2 class="secondtitle">top NEWS</h2>
+  </div>
+
+  <div class="container article">
+    <article>
+      <h1>Content Box 1</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis
+        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+        nec,
+        vulputate
+      </p>
+    </article>
+    <article>
+      <h1>Content Box 2</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis
+        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+        nec,
+        vulputate
+      </p>
+    </article>
+    <article>
+      <h1>Content Box 3</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis
+        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+        nec,
+        vulputate
+      </p>
+    </article>
+    <article>
+      <h1>Content Box 4</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis
+        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+        nec,
+        vulputate
+      </p>
+    </article>
+  </div>
+
+  <div class="container article" id="addContent" style="display:none">
+    <article>
+      <h1>Content Box 5</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis
+        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+        nec,
+        vulputate
+      </p>
+    </article>
+    <article>
+      <h1>Content Box 6</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis
+        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+        nec,
+        vulputate
+      </p>
+    </article>
+    <article>
+      <h1>Content Box 7</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis
+        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+        nec,
+        vulputate
+      </p>
+    </article>
+    <article>
+      <h1>Content Box 8</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis
+        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+        pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+        nec,
+        vulputate
+      </p>
+    </article>
+  </div>
+  <div class="button" id="click2Show">
+    Click2Show
+  </div>
+
+  <div id="side" class="hide">
+    <li><a href="#">map</a></li>
+    <li><a href="#">news</a></li>
+    <li><a href="#">career</a></li>
+    <li><a href="#">conatct</a></li>
+  </div>
+
+  <script src="index.js"></script>
+
+  <script>
+    // HW1 -------------
+
+    function max(...nums) {
+      let max = nums[0];
+      for (let i = 1; i < nums.length; i++) {
+        max = (nums[i] > max) ? nums[i] : max;
+      }
+      return max;
+    }
+
+    console.log(max(1, 2, 4, 5));
+    console.log(max(5, 2, 7, 1, 6));
+    // HW2 -------------
+
+    function calculate(args) {
+      let result;
+      if (args.op === "+") {
+        result = args.n1 + args.n2;
+      } else if (args.op === "-") {
+        result = args.n1 - args.n2;
+      } else {
+        result = "Not supported";
+      }
+      return result;
+    }
+
+    let obj = {};
+    obj.op = '-';
+    obj.n1 = 1;
+    obj.n2 = 2;
+
+    console.log(calculate(obj));
+
+
+
+    class calculateObj {
+      constructor(operation, num1, num2) {
+        this.op = operation;
+        this.n1 = num1;
+        this.n2 = num2;
+      }
+    }
+
+    let obj2 = new calculateObj('+', 1, 11)
+    console.log(calculate(obj2));
+    // HW3 -------------
+    function avg(data) {
+      let amount = data.size;
+      let total = 0;
+      for (let i = 0; i < amount; i++) {
+        total += data.products[i].price;
+      }
+      return total / amount;
+    }
+    console.log(avg({
+      size: 3,
+      products: [{
+        name: "Product 1",
+        price: 100
+      }, {
+        name: "Product 2",
+        price: 700
+      }, {
+        name: "Product 3",
+        price: 250
+      }]
+    }));
+
+    // HW4 -------------
+    function twoSum(nums, target) {
+      for (let i = 0; i < nums.length; i++) {
+        let secondNum = target - nums[i];
+        let newNums = nums;
+        delete newNums[i];
+        if (newNums.indexOf(secondNum) !== -1) {
+          return ([i, newNums.indexOf(secondNum)])
+        }
+      }
+      return false;
+    }
+    console.log(twoSum([2, 7, 11, 15], 9));
+
+    // -------------
+
+  </script>
+</body>
+
+</html>
