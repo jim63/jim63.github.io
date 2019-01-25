@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>sum</title>
+  <style>
+    *{
+      margin: 0;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .container{
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 40px;
+      background-color: #eee;
+      color: chocolate;
+      padding: 40px;
+    }
+
+    .container input{
+      margin-top: 30px;
+      height: 30px;
+    }
+
+    div .ajax{
+      margin-top: 20px;
+      color:green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>hello, this is sum.html</h1>
+
+    <h3>please enter positive integer,<br>then click the button</button></h3>
+
+    <input type="text">
+    <input type="button" value="calculate" class="button">
+    <div class="ajax"></div>
+
+  </div>
+  <script>
+    var btn = document.querySelector('.button')
+    btn.addEventListener('click', () => {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          document.querySelector('.ajax').innerHTML = `the sum is ${JSON.parse(xhr.responseText).sum}`;
+        }
+      };
+      var number = document.querySelector('input').value;
+      xhr.open('GET', `/getData?number=${number}`);
+      console.log(`/getData?number=${number}`);
+      xhr.send();
+    });
+
+  </script>
+
+</body>
+
+</html>
