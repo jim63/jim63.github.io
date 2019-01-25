@@ -1,1 +1,14 @@
-h1 yoyo
+doctype html
+html(lang="en")
+  head
+    title myName
+  body
+    if(!cookies.username)
+      form(action='/trackName', method='get')
+        label enter your name:
+          input(type='text', name='username')
+        button(type='submit') submit
+    else
+      h2 #{cookies.username}
+      form(action='/goodbye', method='post')
+        button(type='submit') goodbye

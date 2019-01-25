@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 app.set('view engine', 'pug');
+const cookieParser = require('cookie-parser')
 
 
 
@@ -9,6 +10,7 @@ app.listen(3000, () => {
 });
 
 app.use(express.static('public'))
+app.use(cookieParser());
 
 app.get('/', (req, res) => {
   res.send('<h1>Hello, My Server!</h1>');
@@ -38,5 +40,17 @@ app.get('/getData', (req, res) => {
 })
 
 app.get('/myName', (req, res) => {
-  res.render('myName')
+  res.render('myName', {
+    cookies: req.cookies
+  })
+})
+
+app.get('/trackName', (req, res) => {
+  res.cookie('username', req.query.username);
+  res.redirect('/myName')
+})
+
+app.post('/goodbye', (req, res) => {
+  res.clearCookie('username');
+  res.redirect('/myName')
 })
