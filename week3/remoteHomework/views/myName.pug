@@ -9,6 +9,6 @@ html(lang="en")
           input(type='text', name='username')
         button(type='submit') submit
     else
-      h2 #{cookies.username}
+      h2 hello,#{cookies.username}
       form(action='/goodbye', method='post')
         button(type='submit') goodbye

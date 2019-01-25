@@ -50,12 +50,15 @@
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
-          document.querySelector('.ajax').innerHTML = `the sum is ${JSON.parse(xhr.responseText).sum}`;
+          if (!isNaN(JSON.parse(xhr.responseText).sum)) {
+            document.querySelector('.ajax').innerHTML = `<h2>the sum is ${JSON.parse(xhr.responseText).sum}</h2>`;
+          } else {
+            document.querySelector('.ajax').innerHTML = `<h2>${JSON.parse(xhr.responseText).sum}</h2>`;
+          }
         }
       };
       var number = document.querySelector('input').value;
       xhr.open('GET', `/getData?number=${number}`);
-      console.log(`/getData?number=${number}`);
       xhr.send();
     });
 
