@@ -16,11 +16,11 @@
 
 
 
-  <!-- <script src="./callback.js"></script> -->
+  <script src="./callback.js"></script>
+
   <script>
     function ajax(src, callback) {
       // your code here
-      // var targetLink = 'https://cwpeng.github.io/live-records-samples/data/products.json'
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
@@ -64,8 +64,8 @@
       }
     }
 
-    ajax("https://cwpeng.github.io/live-records-samples/data/products.json", function (response) {
-      // ajax("./data.json", function (response) {
+    // ajax("https://cwpeng.github.io/live-records-samples/data/products.json", function (response) {
+    ajax("./data.json", function (response) {
       render(response);
     }) // you should get product information in JSON format and render data in the page
 
