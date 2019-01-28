@@ -37,7 +37,7 @@
     function render(data) {
       // your code here.
       // ​document.createElement()​ and a​ppendChild()​ methods are preferred. 
-      var main = document.getElementById('container');
+      var divContainer = document.getElementById('container');
 
       for (let i = 0; i < data.length; i++) {
         var product = document.createElement('div');
@@ -60,7 +60,7 @@
 
         product.appendChild(produtcName).appendChild(productPrice).appendChild(productDescribe);
 
-        main.appendChild(product);
+        divContainer.appendChild(product);
       }
     }
 
