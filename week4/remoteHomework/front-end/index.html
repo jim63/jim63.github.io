@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Product</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <h1 class="title">Top Products</h1>
+  <div class="container" id="container">
+  </div>
+
+
+
+  <script src="./callback.js"></script>
+
+  <script>
+    function ajax(src, callback) {
+      // your code here
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var data = JSON.parse(xhr.responseText)
+            callback(data);
+          }
+        }
+      }
+      xhr.open('GET', src);
+      xhr.send();
+    }
+
+    function render(data) {
+      // your code here.
+      // ​document.createElement()​ and a​ppendChild()​ methods are preferred. 
+      var main = document.getElementById('container');
+
+      for (let i = 0; i < data.length; i++) {
+        var product = document.createElement('div');
+        product.className = 'container_product';
+
+        var produtcName = document.createElement('h3');
+        produtcName.className = 'name';
+        var textProductName = document.createTextNode(`${data[i].name}`);
+        produtcName.appendChild(textProductName);
+
+        var productPrice = document.createElement('h4');
+        productPrice.className = 'price';
+        var textProductPrice = document.createTextNode(`$$:${data[i].price}`);
+        productPrice.appendChild(textProductPrice);
+
+        var productDescribe = document.createElement('h4')
+        productDescribe.className = 'describe';
+        var textProdctDescribe = document.createTextNode(`${data[i].description}`);
+        productDescribe.appendChild(textProdctDescribe);
+
+        product.appendChild(produtcName).appendChild(productPrice).appendChild(productDescribe);
+
+        main.appendChild(product);
+      }
+    }
+
+    ajax("https://cwpeng.github.io/live-records-samples/data/products.json", function (response) {
+      // ajax("./data.json", function (response) {
+      render(response);
+    }) // you should get product information in JSON format and render data in the page
+
+  </script>
+</body>
+
+</html>
