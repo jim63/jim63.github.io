@@ -56,10 +56,13 @@ main {
   height: 5px;
   background-color: white;
   margin: 6px 0;
+  transition: 0.4s;
+
 }
 
 .ham {
   margin-top: 20px;
+  z-index: 2;
 }
 
 .title {
@@ -77,7 +80,6 @@ main {
 article {
   background-color: chocolate;
   border-radius: 5px;
-
 }
 
 .button {
@@ -88,6 +90,7 @@ article {
   text-align: center;
   line-height: 50px;
   margin: 0 auto;
+  margin-bottom: 20px;
   color: black;
   background-color: peru;
   font-size: 25px;
@@ -97,6 +100,41 @@ article {
 .button:hover {
   background-color: #F2FF49;
   border: 2px solid #F2FF49;
+}
+
+#side {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 700px;
+  background-color: #004777;
+  padding-top: 40px;
+  padding-left: 30px;
+  opacity: 0.8;
+
+}
+
+#side li {
+  list-style: none;
+  opacity: 1;
+  font-size: 50px
+}
+
+#side li a {
+  color: wheat;
+}
+
+.hide {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#addContent {
+  display: none;
 }
 
 @media (min-width:500px) and (max-width:800px) {
@@ -155,4 +193,22 @@ article {
   .container {
     width: 1200px
   }
+}
+
+.clickToShow {
+  display: none;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
