@@ -33,7 +33,7 @@ const Sidenav = (props) => {
 const Main = (props) => {
   return(
     <div className="container">
-      <h1 className="title">{props.mainTitle}</h1>
+      <h1 className="title" onClick={props.handleTitleClick}>{props.mainTitle}</h1>
     </div>
   )
 }
@@ -100,7 +100,8 @@ class App extends React.Component{
     }
     ],
     menuOpen: false,
-    fewContent: true
+    fewContent: true,
+    mainTitle: true
   }
 
   handleMenuClick = () => {
@@ -133,6 +134,16 @@ class App extends React.Component{
     return this.state.fewContent ? "addContent":""
   }
 
+  mainTitle = () => {
+    return this.state.mainTitle ? "Hello yuping !" : "YOU JUST CLICKED!!!"
+  }
+
+  handleTitleClick = () => {
+    this.setState(prevState => ({
+      mainTitle: !prevState.mainTitle
+    }));
+  }
+
   render(){
     return(
       <div>
@@ -142,7 +153,7 @@ class App extends React.Component{
           handleMenuClick={this.handleMenuClick}
           showHideMenu = {this.showHideMenu}
         />
-        <Main mainTitle = "Hello yuping !"/>
+        <Main mainTitle={this.mainTitle()} handleTitleClick={this.handleTitleClick}/>
         <Sidenav showHideSide = {this.showHideSide} clickSide = {this.clickSide}/>
         <div className="container article">
           {this.state.article.map(article =>
