@@ -12,7 +12,6 @@ app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
   extended: true
 }));
-
 app.set('view engine', 'pug');
 app.use(express.static('public'))
 // app.use(express.static(path.join(__dirname, 'public')));
@@ -25,30 +24,27 @@ app.listen(3000, () => {
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/welcomePage.html');
 })
-
+con.connect()
 app.post('/signIn', upload.array(), (req, res) => {
 
-  con.connect(function (err) {
+  const email = req.body.email;
+  const password = req.body.password;
+  const sql = `select * from user where email='${email}';`;
+
+  con.query(sql, (err, result) => {
     if (err) throw err;
-    const email = req.body.email;
-    const password = req.body.password;
-    const sql = `select * from user where email='${email}';`;
 
-    con.query(sql, (err, result) => {
-      if (err) throw err;
-
-      if (result.length === 0) {
-        res.json({
-          result: `No such member`
-        })
-      } else if (password === result[0].password) {
-        res.json({
-          result: 'success'
-        });
-      } else res.json({
-        result: `Wrong password`
+    if (result.length === 0) {
+      res.json({
+        result: `No such member`
       })
-    });
+    } else if (password === result[0].password) {
+      res.json({
+        result: 'success'
+      });
+    } else res.json({
+      result: `Wrong password`
+    })
   });
 })
 
