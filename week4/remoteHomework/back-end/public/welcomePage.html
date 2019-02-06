@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>homePage</title>
+  <style>
+    *{
+      margin: 0;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .container{
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 40px;
+      background-color: #eee;
+      padding: 40px;
+    }
+
+    h1,h3{
+      color: chocolate;
+    }
+
+    .container input{
+      margin-top: 30px;
+      height: 30px;
+    }
+
+    div.flex{
+      display: flex;
+      justify-content: space-around;
+      
+        }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Welcom to home page</h1>
+
+    <h3>do you want to sign up or sign in ?</h3>
+    <div class="flex">
+      <div class="smallContainer">
+        <div class="smallContainer">
+          email :<input type="email" placeholder="xxx@gmail.com" class="emailSignUp" required><br>
+          password:<input type="password" placeholder="*******" class="passwordSignUp" required><br>
+          <input type="button" value="signUp" class="signUpButton">
+          <div class="ajaxSignUp"></div>
+        </div>
+
+      </div>
+      <div class="smallContainer">
+        email :<input type="email" placeholder="xxx@gmail.com" class="emailSignIn" required><br>
+        password:<input type="password" placeholder="*******" class="passwordSignIn" required><br>
+        <input type="button" value="signIn" class="signInButton">
+        <div class="ajaxSignIn"></div>
+      </div>
+    </div>
+    <div class="ajax">
+      <h1></h1>
+    </div>
+  </div>
+  <script>
+    var btn = document.querySelector('.signInButton')
+    btn.addEventListener('click', () => {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          if (JSON.parse(xhr.responseText).result === 'success') {
+            window.location = "./success.html";
+          } else {
+            document.querySelector('.ajax').innerHTML =
+              `<h2>${(JSON.parse(xhr.responseText).result)}</h2>`;
+          }
+        }
+      };
+      var email = document.querySelector('.emailSignIn').value;
+      var password = document.querySelector('.passwordSignIn').value;
+
+      var formData = new FormData();
+      formData.append('email', email);
+      formData.append('password', password);
+
+      xhr.open('post', '/signIn');
+      var data = new FormData();
+      data.append('email', email);
+      data.append('password', password);
+
+      formData.forEach((value, key) => {
+        console.log(key + " " + value)
+      });
+
+      xhr.send(formData);
+    });
+
+  </script>
+  <script>
+    var btn = document.querySelector('.signUpButton')
+    btn.addEventListener('click', () => {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          if (JSON.parse(xhr.responseText).result === 'success') {
+            window.location = "./success.html";
+          } else {
+            document.querySelector('.ajax').innerHTML =
+              `<h2>${(JSON.parse(xhr.responseText).result)}</h2>`;
+          }
+        }
+      };
+      var email = document.querySelector('.emailSignUp').value;
+      var password = document.querySelector('.passwordSignUp').value;
+
+      var formData = new FormData();
+      formData.append('email', email);
+      formData.append('password', password);
+
+      xhr.open('post', '/signUp');
+
+      xhr.send(formData);
+    });
+
+  </script>
+</body>
+
+</html>
