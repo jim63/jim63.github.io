@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 const app = express();
 var multer = require('multer')
 var upload = multer()
+var con = require('./conn');
+
 
 
 app.use(bodyParser.json()); // to support JSON-encoded bodies
@@ -25,24 +27,15 @@ app.get('/', (req, res) => {
 })
 
 app.post('/signIn', upload.array(), (req, res) => {
-  console.log('POST_singIn');
-  var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "98mylove",
-    database: "assignment"
-  });
 
   con.connect(function (err) {
     if (err) throw err;
     const email = req.body.email;
     const password = req.body.password;
     const sql = `select * from user where email='${email}';`;
-    console.log(sql);
 
     con.query(sql, (err, result) => {
       if (err) throw err;
-      console.log(result);
 
       if (result.length === 0) {
         res.json({
@@ -60,13 +53,6 @@ app.post('/signIn', upload.array(), (req, res) => {
 })
 
 app.post('/signUp', upload.array(), (req, res) => {
-  console.log('POST_singUP');
-  var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "98mylove",
-    database: "assignment"
-  });
 
   const email = req.body.email;
   const password = req.body.password;
