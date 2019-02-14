@@ -1,0 +1,447 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+.above1250 {
+  display: none;
+}
+
+body {
+  margin-bottom: 60px;
+  min-width: 360;
+}
+
+header {
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.divLogo {
+  width: 151px;
+  height: 42px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.itemSeparation {
+  color: #828282;
+}
+
+.divSearch {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+}
+
+.Nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 16px;
+  background-color: #313538;
+  font-family: "PingFangTC";
+  font-weight: 200;
+  width: 100%;
+  height: 50px;
+  width: 100%;
+}
+
+.Nav li {
+  line-height: 50px;
+}
+
+li.items a {
+  color: #888888;
+}
+
+li.items a:hover {
+  color: #ffffff;
+}
+
+.onMobile {
+  display: none;
+}
+
+div.campaigns {
+  position: relative;
+}
+
+.campaignsWordsContainer {
+  height: 99px;
+  width: 143px;
+  position: absolute;
+  top: 36px;
+  left: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.campaignsWords p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.whiteSpace {
+  width: 100%;
+  height: 40px;
+  background-color: #313538;
+}
+
+.campaigns img {
+  height: 185px;
+  width: 100%
+}
+
+.campaignsWordsSource {
+  font-size: 5px;
+}
+
+.productContainer {
+  margin: 15px auto 30px auto;
+  width: 86.7%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.productContainerEach {
+  width: 153px;
+  height: 294px;
+}
+
+.productImage {
+  width: 153px;
+  height: 204px;
+}
+
+.productColor {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 12px;
+  height: 12px;
+}
+
+.containerProductColor {
+  display: flex;
+}
+
+.productTitle {
+  margin-bottom: 8px;
+}
+
+.productContainerEach p {
+  font-size: 14px;
+  color: #3f3a3a;
+  font-family: NotoSansCJKtc;
+  line-height: 14px;
+  letter-spacing: 2.4px;
+}
+
+.hBar a {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hBarSeparator {
+  background-color: #828282;
+  width: 1px;
+  height: 24px;
+  position: fixed;
+  right: 50%;
+  bottom: 18px;
+}
+
+.barWrap {
+  display: flex;
+  line-height: 34px;
+  margin: 12px auto;
+  font-family: PingFangTC;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.cartBar {
+  position: fixed;
+  width: 50%;
+  height: 60px;
+  background-color: #313538;
+  bottom: 0;
+  left: 0;
+}
+
+.MemberBar {
+  position: fixed;
+  width: 50%;
+  height: 60px;
+  background-color: #313538;
+  bottom: 0;
+  left: 50%;
+}
+
+
+footer {
+  font-size: 14px;
+  display: flex;
+  align-content: space-between;
+  background-color: #313538;
+  height: 114px;
+}
+
+.containerFooterInfo {
+  font-family: PingFangTC;
+  font-weight: 200;
+  list-style-type: none;
+  height: 99px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 15px;
+  padding-left: 40px;
+  width: 50%;
+}
+
+.containerFooterInfo li a {
+  color: #ffffff;
+  line-height: 20px;
+}
+
+.containerFooterInfo li {
+  margin-top: 8px;
+}
+
+.containerConnect {
+  width: 33%;
+  height: 100px;
+  display: flex;
+  padding-top: 45px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.containerConnect img {
+  height: 21px;
+  width: 21px;
+}
+
+footer .copyright {
+  color: white;
+}
+
+div.copyright {
+  background-color: #313538;
+  font-family: PingFangTC;
+  font-weight: 200;
+  font-size: 10px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: #828282;
+}
+
+@media screen and (min-width: 361px) {
+  .productContainer {
+    justify-content: space-around;
+  }
+
+}
+
+
+@media screen and (min-width: 700px) and (max-width: 1250px) {
+  .productContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 70px auto 96px auto;
+  }
+
+  .productImage {
+    width: 360px;
+    height: 480px;
+  }
+
+  .productContainerEach {
+    width: 360px;
+    height: 652px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+}
+
+@media screen and (min-width: 1250px) {
+
+  body {
+    margin-bottom: 0px;
+  }
+
+  .onMobile {
+    display: block;
+  }
+
+  .noneAbove1250 {
+    display: none;
+  }
+
+  .above1250 {
+    display: flex;
+  }
+
+  .NavAbove1250 {
+    line-height: 100px;
+    font-size: 20px;
+  }
+
+  .above1250 .imgLogo {
+    margin-left: 60px;
+    margin-top: 26px;
+    margin-bottom: 26px;
+    margin-right: 96px;
+  }
+
+  .NavAbove1250 {
+    list-style: none;
+    display: flex;
+    letter-spacing: 30px;
+  }
+
+  .NavAbove1250 li a:hover {
+    color: #8b572a;
+  }
+
+  .navRight {
+    display: flex;
+    position: absolute;
+    right: 54px;
+  }
+
+  .navRight img {
+    width: 44px;
+    height: 44px;
+    margin-top: 30px;
+    margin-right: 42px;
+  }
+
+  .searchBlock input {
+    height: 44px;
+    width: 214px;
+    border: 2px solid #a1a1a1;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-right: 42px;
+  }
+
+  .campaigns img {
+    height: 500px;
+    width: 100%
+  }
+
+  .campaignsWordsContainer {
+    height: 228px;
+    width: 310px;
+    position: absolute;
+    top: 166px;
+    left: 24.445%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .campaignsWords p {
+    font-size: 30px;
+    line-height: 50px
+  }
+
+  .productContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 70px auto 96px auto;
+  }
+
+  .productImage {
+    width: 360px;
+    height: 480px;
+  }
+
+  .productContainerEach {
+    width: 360px;
+    height: 652px;
+  }
+
+  .productColor {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .productContainerEach p {
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin-top: 10px;
+  }
+
+  .containerFooterInfo {
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    height: 115px;
+    line-height: 115px;
+    padding-left: 15vw;
+  }
+
+  .containerFooterInfo li {
+    margin-top: 0;
+    margin-right: 33px;
+  }
+
+  footer {
+    height: 115px;
+  }
+
+  .containerConnect {
+    height: 115px;
+    padding-top: 32.5px;
+    width: auto;
+  }
+
+  .containerConnect img {
+    height: 50px;
+    width: 50px;
+    margin-right: 30px;
+  }
+
+  div.copyright {
+    line-height: 115px;
+    font-size: 12px;
+  }
+}
