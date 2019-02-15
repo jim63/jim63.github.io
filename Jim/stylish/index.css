@@ -36,10 +36,13 @@ header {
 }
 
 .divLogo {
-  width: 151px;
   height: 42px;
   padding: 0;
-  margin: 0 auto;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .itemSeparation {
@@ -265,8 +268,11 @@ div.copyright {
     justify-content: space-around;
   }
 
-}
+  .productContainerEach {
+    margin-right: 5px;
+  }
 
+}
 
 @media screen and (min-width: 700px) and (max-width: 1250px) {
   .productContainer {
@@ -278,16 +284,20 @@ div.copyright {
   }
 
   .productImage {
-    width: 360px;
-    height: 480px;
+    width: 100%;
+    height: auto;
   }
 
   .productContainerEach {
-    width: 360px;
-    height: 652px;
+    width: 25%;
+    height: auto;
     margin-right: 10px;
     margin-left: 10px;
+    margin-bottom: 20px;
+
   }
+
+
 
 }
 
@@ -356,7 +366,7 @@ div.copyright {
   }
 
   .campaigns img {
-    height: 500px;
+    height: 26vw;
     width: 100%
   }
 
@@ -364,8 +374,8 @@ div.copyright {
     height: 228px;
     width: 310px;
     position: absolute;
-    top: 166px;
-    left: 24.445%;
+    top: 10vw;
+    left: 24.445vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -376,23 +386,31 @@ div.copyright {
     line-height: 50px
   }
 
+  .campaignsWordsSource {
+    font-size: 20px;
+  }
+
+
+  .productImage {
+    width: 100%;
+    height: auto;
+  }
+
   .productContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    width: 70%;
+    width: 60%;
     margin: 70px auto 96px auto;
   }
 
-  .productImage {
-    width: 360px;
-    height: 480px;
+  .productContainerEach {
+    width: 28%;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 
-  .productContainerEach {
-    width: 360px;
-    height: 652px;
-  }
 
   .productColor {
     margin-top: 8px;
@@ -444,4 +462,31 @@ div.copyright {
     line-height: 115px;
     font-size: 12px;
   }
+}
+
+@media screen and (min-width:1919px) {
+  .productContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 70px auto 96px auto;
+  }
+
+  .productImage {
+    width: 360px;
+    height: 480px;
+  }
+
+  .productContainerEach {
+    width: 360px;
+    height: 652px;
+  }
+
+  .campaigns img {
+    height: 500px;
+    width: 100%
+  }
+
+
 }
