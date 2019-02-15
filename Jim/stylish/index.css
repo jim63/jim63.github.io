@@ -28,6 +28,9 @@ img {
 body {
   margin-bottom: 60px;
   min-width: 360px;
+  /* display: flex;
+  flex-direction: column;
+  align-content: space-around; */
 }
 
 header {
@@ -130,12 +133,13 @@ div.campaigns {
 
 .productContainerEach {
   width: 153px;
-  height: 294px;
+  height: auto;
+  margin-bottom: 30px;
 }
 
 .productImage {
   width: 153px;
-  height: 204px;
+  height: auto;
 }
 
 .productColor {
@@ -165,6 +169,7 @@ div.campaigns {
 .hBar a {
   display: flex;
   justify-content: space-around;
+  height: 60px;
 }
 
 .hBarSeparator {
@@ -202,7 +207,6 @@ div.campaigns {
   bottom: 0;
   left: 50%;
 }
-
 
 footer {
   font-size: 14px;
@@ -403,6 +407,7 @@ div.copyright {
     flex-wrap: wrap;
     width: 60%;
     margin: 70px auto 96px auto;
+
   }
 
   .productContainerEach {
@@ -410,6 +415,7 @@ div.copyright {
     height: auto;
     margin-right: 10px;
     margin-left: 10px;
+    margin-bottom: 20px;
   }
 
 
@@ -487,12 +493,13 @@ div.copyright {
 
   .productImage {
     width: 360px;
-    height: 480px;
+    height: auto;
   }
 
   .productContainerEach {
     width: 360px;
-    height: 652px;
+    /* height: 652px; */
+    margin-bottom: 20px;
   }
 
   .campaigns img {

@@ -15,7 +15,6 @@ click2Action.addEventListener("click", () => {
   if (click2Action.innerText === 'Click2Show') {
     addContent.style.cssText = 'display:show';
     click2Action.innerText = 'Click2Hide';
-
   } else {
     addContent.style.cssText = 'display:none';
     click2Action.innerText = 'Click2Show';
