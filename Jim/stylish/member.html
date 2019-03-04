@@ -50,19 +50,18 @@
     <img src="./images/search.png" class="search__Container__Img">
   </label>
 
-
-
-  <div class="isLogin">
-    <h1 class="isLogin__h1"></h1>
+  <div class="member__Container">
+    <div class="member__Container__Img"><img src=""></div>
+    <p class=" member__Container__Name"></p>
+    <p class=" member__Container__Email"></p>
   </div>
 
 
 
 
 
-
   <footer>
-    <div class="footer__Info">
+    <div class=" footer__Info">
       <a href="#">
         <li>關於 Stylish</li>
       </a>
@@ -96,13 +95,7 @@
   <script src="./search.js"></script>
   <script src="./productRedirect.js"></script>
   <script src="./shoppingCartLocalStorage.js"></script>
-  <script>
-    if (window.location.href.split('=')[1] == 'true') {
-      let isLogin__h1 = document.querySelector('.isLogin__h1');
-      isLogin__h1.innerHTML = '登入成功';
-    }
-
-  </script>
+  <script src="./member.js"></script>
 </body>
 
 </html>
