@@ -153,15 +153,12 @@ a:active {
 }
 
 .member__Container__Button {
-  margin: 10 auto;
   text-align: center;
 }
 
-.member__Container__Button {
-  margin: 0 auto;
+.member__Container__Button__Container {
+  margin: 10 auto;
 }
-
-
 
 footer {
   background-color: #313538;
