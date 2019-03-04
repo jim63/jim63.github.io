@@ -134,6 +134,13 @@ a:active {
   width: 90vw;
   min-width: 360px;
   max-width: 400px;
+  margin: 20px auto 400px auto;
+}
+
+.member__Container__Name,
+.member__Container__Name {
+  text-align: center;
+  font-size: 25px;
 }
 
 
