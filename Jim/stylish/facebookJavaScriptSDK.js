@@ -30,7 +30,6 @@ function checkConnected() {
     if (response.status === 'connected') {
       window.location.href = `./member.html?isLogin=true`;
     } else {
-      console.log(123);
       fbLogin();
     }
   });
