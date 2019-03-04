@@ -23,7 +23,7 @@
       <div class="nav__cartAndMember__Container1080__Div">
         <a href="#"><img src="./images/cart.png"></a>
       </div>
-      <a href="#"><img src="./images/member.png"></a>
+      <a href="#"><img src="./images/member.png" onclick="checkConnected()"></a>
     </div>
 
   </div>
@@ -92,7 +92,26 @@
   <script src="./search.js"></script>
   <script src="./campaign.js"></script>
   <script src="./shoppingCartLocalStorage.js"></script>
+  <script src="./facebookJavaScriptSDK.js"></script>
   <script>
+    function checkConnected() {
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          window.location.href = `./member.html`;
+        } else {
+          console.log(123);
+          fbLogin();
+        }
+      });
+    }
+
+    function fbLogin() {
+      FB.login(function (response) {
+        // Handle the response object, like in statusChangeCallback() in our demo
+        // code.
+        console.log('fbLogin', response.status);
+      });
+    }
     shoppingCartLocalStorage()
 
   </script>
