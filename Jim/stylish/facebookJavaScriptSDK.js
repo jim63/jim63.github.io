@@ -41,7 +41,7 @@ function checkConnected() {
               userdata.email = JSON.parse(xmlHttp.responseText).email;
               userdata.picture = JSON.parse(xmlHttp.responseText).picture.data.url;
               console.log(userdata);
-              document.cookie = userdata = `${JSON.stringify(userdata)}`
+              document.cookie = `userdata = ${JSON.stringify(userdata)}`
             }
           }
           xmlHttp.open("GET", theUrl, true); // true for asynchronous
