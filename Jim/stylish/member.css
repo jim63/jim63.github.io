@@ -157,7 +157,9 @@ a:active {
   text-align: center;
 }
 
-
+.member__Container__Button {
+  margin: 0 auto;
+}
 
 
 
