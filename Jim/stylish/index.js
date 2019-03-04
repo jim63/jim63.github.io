@@ -4,7 +4,8 @@ var women__Button = document.querySelector('.women__Button');
 var accessories__Button = document.querySelector('.accessories__Button');
 var search__Container__Img = document.querySelector(".search__Container__Img");
 var search__Container__Input = document.querySelector('.search__Container__Input');
-
+let nav__cartAndMember__Container1080__Div = document.querySelector('.nav__cartAndMember__Container1080__Div');
+let cartAndMember__Container__Cart = document.querySelector('.cartAndMember__Container__Cart');
 
 switch (window.location.href.split('?')[1]) {
   case 'men':
@@ -55,6 +56,15 @@ search__Container__Input.addEventListener('keypress', (e) => {
   }
 })
 
+nav__cartAndMember__Container1080__Div.addEventListener('click', () => {
+  window.location = "./cartPage.html";
+})
+
+cartAndMember__Container__Cart.addEventListener('click', () => {
+  window.location = "./cartPage.html";
+})
+
+
 function productXMLRequest(cata, paging = 0) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
@@ -93,7 +103,7 @@ function productXMLRequest(cata, paging = 0) {
 
     }
   }
-  xhr.open('GET', `http://18.214.165.31/api/1.0/${cata}&paging=${paging}`);
+  xhr.open('GET', `https://api.appworks-school.tw/api/1.0/${cata}&paging=${paging}`);
   xhr.send();
 }
 

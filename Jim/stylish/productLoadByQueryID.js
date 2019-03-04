@@ -9,7 +9,7 @@ xhr.onreadystatechange = () => {
     shoppingCartLocalStorage(responseText__JSON);
   }
 }
-xhr.open('GET', `http://18.214.165.31/api/1.0/products/details?${id}`);
+xhr.open('GET', `https://api.appworks-school.tw/api/1.0/products/details?${id}`);
 xhr.send();
 
 

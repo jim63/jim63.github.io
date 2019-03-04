@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       creatElement__campaign__Container__SlidingBanner__Dot(responseText__JSON);
     }
   }
-  xhr.open('GET', `http://18.214.165.31/api/1.0/marketing/campaigns`);
+  xhr.open('GET', `https://api.appworks-school.tw/api/1.0/marketing/campaigns`);
   xhr.send();
 })
 
@@ -21,7 +21,7 @@ const creatElement__campaign__Container__SlidingBanner__Dot = (productObj) => {
   var img__Preload = [];
 
   for (let numOfCampaign = 0; numOfCampaign < productObj.length; numOfCampaign++) {
-    img__Preload[numOfCampaign] = `http://18.214.165.31${productObj[numOfCampaign]['picture']}`
+    img__Preload[numOfCampaign] = `https://api.appworks-school.tw${productObj[numOfCampaign]['picture']}`
     var campaign__Container__SlidingBanner__Dot__A = document.createElement('a')
     var campaign__Container__SlidingBanner__Dot = document.createElement('div')
     campaign__Container__SlidingBanner__Dot.className += "campaign__Container__SlidingBanner__Dot";
@@ -50,7 +50,7 @@ const creatElement__campaign__Container__SlidingBanner__Dot = (productObj) => {
 const showDivs = function (targetImage, productObj) {
   clearTimeout(timeOutId);
   const campaign__Container = document.querySelector('.campaign__Container');
-  campaign__Container.style.backgroundImage = `url('http://18.214.165.31${productObj[targetImage%productObj.length]['picture']}')`;
+  campaign__Container.style.backgroundImage = `url('https://api.appworks-school.tw${productObj[targetImage%productObj.length]['picture']}')`;
 
   changeSlogon(targetImage, productObj);
   timeOutId = setTimeout(() => {

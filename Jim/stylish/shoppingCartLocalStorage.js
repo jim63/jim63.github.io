@@ -1,17 +1,24 @@
-function shoppingCartLocalStorage(responseText__JSON) {
-  console.log(responseText__JSON.variants);
-
+function shoppingCartLocalStorage(responseText__JSON = '') {
   if (localStorage.getItem('shoppingCart')) {
-    countCart()
+    if (localStorage.getItem('shoppingCart').length > 0) {
+      countCart();
+    }
+    // else {
+    //   let nav__cartAndMember__Container1080__Amount = document.querySelector('.nav__cartAndMember__Container1080__Amount');
+    //   let cartAndMember__Container__Cart__Amount = document.querySelector('.cartAndMember__Container__Cart__Amount');
+    //   let cartAndMember__Container = document.querySelector('.cartAndMember__Container');
+    //   let nav__cartAndMember__Container1080__Div = document.querySelector('.nav__cartAndMember__Container1080__Div');
+    //   cartAndMember__Container.removeChild(cartAndMember__Container__Cart__Amount);
+    //   nav__cartAndMember__Container1080__Div.removeChild(nav__cartAndMember__Container1080__Amount);
+    // }
   }
 
   function countCart() {
-    let nav__cartAndMember__Container1080__Div = document.querySelector('nav__cartAndMember__Container1080__Div');
+    let nav__cartAndMember__Container1080__Div = document.querySelector('.nav__cartAndMember__Container1080__Div');
     let amountInCart = JSON.parse(localStorage.getItem('shoppingCart')).length;
 
     if (amountInCart > 0) {
       let nav__cartAndMember__Container1080__Amount__Check = document.querySelector('.nav__cartAndMember__Container1080__Amount');
-
       if (!nav__cartAndMember__Container1080__Amount__Check) {
         let nav__cartAndMember__Container1080__Div = document.querySelector('.nav__cartAndMember__Container1080__Div');
         let nav__cartAndMember__Container1080__Amount = document.createElement('div');
@@ -59,8 +66,6 @@ function shoppingCartLocalStorage(responseText__JSON) {
 
 
   function addToCart() {
-
-
     if (localStorage.getItem('shoppingCart') === null) {
       var storageArray = [];
       localStorage.setItem('shoppingCart', JSON.stringify(storageArray));
@@ -73,12 +78,14 @@ function shoppingCartLocalStorage(responseText__JSON) {
     let size__Value = document.querySelector('.productPage__Container__Sub__Info__Size__Size__Block__Selected p').innerHTML;
     let amount__Value = document.querySelector('.productPage__Container__Sub__Info__Amount__Container__Num').innerHTML;
     let id = document.querySelector('.productPage__Container__Sub__Sub__Info__ID').innerHTML;
+    let name = document.querySelector('.productPage__Container__Sub__Sub__Info__Name').innerHTML;
 
     let inputObject = {
       id: id,
       color: `${color__Value}`,
       size: size__Value,
-      amount: amount__Value
+      amount: amount__Value,
+      name: name
     };
 
     if (storageArray.length > 0) {
