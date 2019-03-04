@@ -11,14 +11,17 @@ function readCookie(name) {
 
 
 let cookieUser = JSON.parse(readCookie('userdata'));
-let name = cookieUser.name;
-let email = cookieUser.email;
-let picture = cookieUser.picture;
 
-let member__Container__Img = document.querySelector('.member__Container__Img img');
-let member__Container__Name = document.querySelector('.member__Container__Name');
-let member__Container__Email = document.querySelector('.member__Container__Email');
+if (cookieUser) {
+  let name = cookieUser.name;
+  let email = cookieUser.email;
+  let picture = cookieUser.picture;
 
-member__Container__Name.innerHTML = name;
-member__Container__Email.innerHTML = email;
-member__Container__Img.src = picture;
+  let member__Container__Img = document.querySelector('.member__Container__Img img');
+  let member__Container__Name = document.querySelector('.member__Container__Name');
+  let member__Container__Email = document.querySelector('.member__Container__Email');
+
+  member__Container__Name.innerHTML = name;
+  member__Container__Email.innerHTML = email;
+  member__Container__Img.src = picture;
+}
