@@ -20,5 +20,5 @@ let member__Container__Name = document.querySelector('.member__Container__Name')
 let member__Container__Email = document.querySelector('.member__Container__Email');
 
 member__Container__Name.innerHTML = name;
-member__Container__Email.innerHTML = Email;
+member__Container__Email.innerHTML = email;
 member__Container__Img.src = picture;

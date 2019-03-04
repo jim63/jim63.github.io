@@ -58,7 +58,7 @@ function checkConnected() {
 
 
       });
-      // window.location.href = `./member.html?isLogin=true`;
+      window.location.href = `./member.html?isLogin=true`;
     } else {
       fbLogin();
     }
