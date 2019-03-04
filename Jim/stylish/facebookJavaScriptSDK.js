@@ -24,11 +24,11 @@ window.fbAsyncInit = function () {
 
 function checkConnected() {
   FB.getLoginStatus(function (response) {
-    console.log(response);
+    console.log('getLoginStatus', response);
 
     if (response.status === 'connected') {
       FB.getLoginStatus(function (response) {
-        console.log(response.authResponse.accessToken);
+        console.log('getLoginStatus2', response.authResponse.accessToken);
 
         function httpGetAsync(theUrl) {
           var xmlHttp = new XMLHttpRequest();
@@ -51,7 +51,7 @@ function checkConnected() {
           `https://graph.facebook.com/v3.2/me?fields=id,name,picture.type(large),email&access_token=${response.authResponse.accessToken}`
         httpGetAsync(URL)
       });
-      window.location.href = `./member.html?isLogin=true`;
+      // window.location.href = `./member.html?isLogin=true`;
     } else {
       fbLogin();
     }
