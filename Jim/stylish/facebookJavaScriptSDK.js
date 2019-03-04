@@ -24,6 +24,8 @@ window.fbAsyncInit = function () {
 
 function checkConnected() {
   FB.getLoginStatus(function (response) {
+    console.log(response);
+
     if (response.status === 'connected') {
       FB.getLoginStatus(function (response) {
         console.log(response.authResponse.accessToken);
@@ -38,7 +40,7 @@ function checkConnected() {
               userdata.email = JSON.parse(xmlHttp.responseText).email;
               userdata.picture = JSON.parse(xmlHttp.responseText).picture.data.url;
               console.log(userdata);
-              document.cookie = `userdata = ${JSON.stringify(userdata)}`
+              document.cookie = `userdata = ${JSON.stringify(userdata)}`;
             }
           }
           xmlHttp.open("GET", theUrl, true); // true for asynchronous
