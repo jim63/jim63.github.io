@@ -152,7 +152,10 @@ a:active {
   font-size: 25px;
 }
 
-
+.member__Container__Button {
+  margin: 10 auto;
+  text-align: center;
+}
 
 
 
