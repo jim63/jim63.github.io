@@ -37,8 +37,8 @@
     </a>
     <div class="cartAndMember__Container__Sep noneAbove1080">|</div>
     <a href="#">
-      <div class="cartAndMember__Container__Member noneAbove1080">
-        <img src="./images/member-mobile.png">
+      <div class="cartAndMember__Container__Member noneAbove1080" onclick="checkConnected()">
+        <img src=" ./images/member-mobile.png">
         <p>會員</p>
       </div>
     </a>
@@ -94,24 +94,24 @@
   <script src="./shoppingCartLocalStorage.js"></script>
   <script src="./facebookJavaScriptSDK.js"></script>
   <script>
-    function checkConnected() {
-      FB.getLoginStatus(function (response) {
-        if (response.status === 'connected') {
-          window.location.href = `./member.html`;
-        } else {
-          console.log(123);
-          fbLogin();
-        }
-      });
-    }
+    // function checkConnected() {
+    //   FB.getLoginStatus(function (response) {
+    //     if (response.status === 'connected') {
+    //       window.location.href = `./member.html`;
+    //     } else {
+    //       console.log(123);
+    //       fbLogin();
+    //     }
+    //   });
+    // }
 
-    function fbLogin() {
-      FB.login(function (response) {
-        // Handle the response object, like in statusChangeCallback() in our demo
-        // code.
-        console.log('fbLogin', response.status);
-      });
-    }
+    // function fbLogin() {
+    //   FB.login(function (response) {
+    //     // Handle the response object, like in statusChangeCallback() in our demo
+    //     // code.
+    //     console.log('fbLogin', response.status);
+    //   });
+    // }
     shoppingCartLocalStorage()
 
   </script>

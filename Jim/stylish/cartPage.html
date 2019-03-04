@@ -26,7 +26,7 @@
           <!-- <div class='nav__cartAndMember__Container1080__Amount'>5</div> -->
         </div>
       </a>
-      <a href="#"><img src="./images/member.png"></a>
+      <a href="#"><img src="./images/member.png" onclick="checkConnected()"></a>
     </div>
 
   </div>
@@ -39,7 +39,7 @@
     </a>
     <div class="cartAndMember__Container__Sep noneAbove1080">|</div>
     <a href="#">
-      <div class="cartAndMember__Container__Member noneAbove1080">
+      <div class="cartAndMember__Container__Member noneAbove1080" onclick="checkConnected()">
         <img src="./images/member-mobile.png">
         <p>會員</p>
       </div>
@@ -252,7 +252,7 @@
 <script src="./cartPage.js"></script>
 <script src="https://js.tappaysdk.com/tpdirect/v4"></script>
 <script src="./facebookJavaScriptSDK.js"></script>
-<script>
+<!-- <script>
   function checkConnected() {
     FB.getLoginStatus(function (response) {
       if (response.status === 'connected') {
@@ -273,7 +273,7 @@
   }
   shoppingCartLocalStorage()
 
-</script>
+</script> -->
 
 <script>
   TPDirect.setupSDK(12348, "app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF", 'sandbox')
@@ -374,7 +374,6 @@
     }
 
 
-
     function getOrderNum(prime) {
       let cartData = JSON.parse(localStorage.getItem('shoppingCart'));
       let itemList = [];
@@ -446,7 +445,6 @@
         });
       }
     }
-
   }
 
 </script>

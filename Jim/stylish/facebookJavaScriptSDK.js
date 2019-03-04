@@ -25,3 +25,21 @@ window.fbAsyncInit = function () {
 }(document, 'script', 'facebook-jssdk'));
 
 
+function checkConnected() {
+  FB.getLoginStatus(function (response) {
+    if (response.status === 'connected') {
+      window.location.href = `./member.html?isLogin=true`;
+    } else {
+      console.log(123);
+      fbLogin();
+    }
+  });
+}
+
+function fbLogin() {
+  FB.login(function (response) {
+    // Handle the response object, like in statusChangeCallback() in our demo
+    // code.
+    console.log('fbLogin', response.status);
+  });
+}
