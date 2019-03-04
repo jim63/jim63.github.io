@@ -141,8 +141,13 @@ a:active {
   margin: 0 auto;
 }
 
+.member__Container__Img img {
+  margin: 0 auto;
+}
+
 .member__Container__Name,
 .member__Container__Email {
+  margin: 10px 0;
   text-align: center;
   font-size: 25px;
 }
