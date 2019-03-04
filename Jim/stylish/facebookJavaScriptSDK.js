@@ -28,9 +28,6 @@ function checkConnected() {
       FB.getLoginStatus(function (response) {
         console.log(response.authResponse.accessToken);
 
-
-
-
         function httpGetAsync(theUrl) {
           var xmlHttp = new XMLHttpRequest();
           xmlHttp.onreadystatechange = function () {
@@ -51,12 +48,6 @@ function checkConnected() {
         let URL =
           `https://graph.facebook.com/v3.2/me?fields=id,name,picture.type(large),email&access_token=${response.authResponse.accessToken}`
         httpGetAsync(URL)
-
-
-
-
-
-
       });
       window.location.href = `./member.html?isLogin=true`;
     } else {
