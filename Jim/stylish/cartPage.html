@@ -251,6 +251,30 @@
 <script src="./productRedirect.js"></script>
 <script src="./cartPage.js"></script>
 <script src="https://js.tappaysdk.com/tpdirect/v4"></script>
+<script src="./facebookJavaScriptSDK.js"></script>
+<script>
+  function checkConnected() {
+    FB.getLoginStatus(function (response) {
+      if (response.status === 'connected') {
+        window.location.href = `./member.html`;
+      } else {
+        console.log(123);
+        fbLogin();
+      }
+    });
+  }
+
+  function fbLogin() {
+    FB.login(function (response) {
+      // Handle the response object, like in statusChangeCallback() in our demo
+      // code.
+      console.log('fbLogin', response.status);
+    });
+  }
+  shoppingCartLocalStorage()
+
+</script>
+
 <script>
   TPDirect.setupSDK(12348, "app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF", 'sandbox')
 

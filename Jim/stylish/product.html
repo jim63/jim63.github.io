@@ -133,14 +133,31 @@
   <script src="./productHandleStock.js"></script>
   <script src="./productRedirect.js"></script>
   <script src="./shoppingCartLocalStorage.js"></script>
-
-
+  <script src="./facebookJavaScriptSDK.js"></script>
   <script>
-    `{
-      prime: 53bf64ba953d81be57692925a73688ad8f27f87799d4e3f0faef7c8618802118,
-      order:
-      {shipping:"delivery",payment:"credit_card",subtotal:123,freight: 321,total:444,recipient:{name: oledu,phone: 0987654321,email: 123@321,address: whiteHouse,time: "morning"},list:[{id: 201807201824,name: 前開衩扭結洋裝,price: 499,color:{name: 淺灰,code: CCCCCC},size: M,qty: 1}]}}`
-        </script>
+    function checkConnected() {
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          window.location.href = `./member.html`;
+        } else {
+          console.log(123);
+          fbLogin();
+        }
+      });
+    }
+
+    function fbLogin() {
+      FB.login(function (response) {
+        // Handle the response object, like in statusChangeCallback() in our demo
+        // code.
+        console.log('fbLogin', response.status);
+      });
+    }
+    shoppingCartLocalStorage()
+
+  </script>
+
+
 </body>
 
 </html>
