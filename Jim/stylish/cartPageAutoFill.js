@@ -11,3 +11,5 @@ let userdata = JSON.parse(getCookie('userdata'));
 
 cart__Container__Sub__Order__Input__Name.innerHTML = userdata.name;
 cart__Container__Sub__Order__Input__Email.innerHTML = userdata.email;
+
+console.log('upsuccess');
