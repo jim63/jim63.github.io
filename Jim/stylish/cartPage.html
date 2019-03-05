@@ -430,6 +430,8 @@
           FB.getLoginStatus(function (response) {
             if (response.status === 'connected') {
               xhr.setHeader('Authorization', 'Bearer ' + response.authResponse.accessToken)
+              console.log('Authorization');
+
             }
           })
           xhr.onload = function () {
