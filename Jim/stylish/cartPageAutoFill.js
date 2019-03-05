@@ -1,6 +1,5 @@
 let cart__Container__Sub__Order__Input__Name = document.querySelector('.cart__Container__Sub__Order__Input__Name');
 let cart__Container__Sub__Order__Input__Email = document.querySelector('.cart__Container__Sub__Order__Input__Email');
-console.log(cart__Container__Sub__Order__Input__Name, cart__Container__Sub__Order__Input__Email);
 
 function getCookie(name) {
   var value = "; " + document.cookie;
@@ -11,7 +10,5 @@ function getCookie(name) {
 let userdata = JSON.parse(getCookie('userdata'));
 console.log(userdata);
 
-cart__Container__Sub__Order__Input__Name.innerHTML = userdata.name;
-cart__Container__Sub__Order__Input__Email.innerHTML = userdata.email;
-
-console.log('upsuccess1');
+cart__Container__Sub__Order__Input__Name.value = userdata.name;
+cart__Container__Sub__Order__Input__Email.value = userdata.email;
