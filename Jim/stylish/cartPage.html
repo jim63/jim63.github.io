@@ -429,9 +429,8 @@
           xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
           FB.getLoginStatus(function (response) {
             if (response.status === 'connected') {
-              xhr.setHeader('Authorization', 'Bearer ' + response.authResponse.accessToken)
+              xhr.setRequestHeader('Authorization', 'Bearer ' + response.authResponse.accessToken)
               console.log('Authorization');
-
             }
           })
           xhr.onload = function () {
