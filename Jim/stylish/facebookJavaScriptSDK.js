@@ -63,8 +63,6 @@ function fbLogin() {
       `https://graph.facebook.com/v3.2/me?fields=id,name,picture.type(large),email&access_token=${response.authResponse.accessToken}`
     httpGetAsync(URL)
     console.log('fbLogin', response.status);
-  }, {
-    scope = "public_profile,email"
   });
 }
 
