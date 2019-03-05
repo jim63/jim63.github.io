@@ -17,6 +17,13 @@ body {
   margin-bottom: 9.5vw;
   max-width: 1920px;
   min-height: 100vh;
+  display: flex;
+
+  /*讓我們的flex佈局，由上到下排列*/
+  flex-direction: column;
+
+  /* 高度設定為 可大於但不可小於 整個瀏覽器可視範圍 */
+  min-height: 100vh;
 }
 
 img {
@@ -134,9 +141,9 @@ a:active {
 
 .thankyou {
   width: 300px;
-  height: 70vh;
   margin: 0 auto;
   text-align: center;
+  flex-grow: 1
 }
 
 
