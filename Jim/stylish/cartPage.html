@@ -427,6 +427,11 @@
 
           xhr.open("POST", 'https://api.appworks-school.tw/api/1.0/order/checkout');
           xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+          FB.getLoginStatus(function (response) {
+            if (response.status === 'connected') {
+              xhr.setHeader('Authorization', 'Bearer ' + response.authResponse.accessToken)
+            }
+          })
           xhr.onload = function () {
             resolve(this.responseText);
             // console.log(this.responseText);
