@@ -64,7 +64,7 @@ function fbLogin() {
     httpGetAsync(URL)
     console.log('fbLogin', response.status);
   }, {
-    scope = "email"
+    scope: "public_profile,email"
   });
 }
 
