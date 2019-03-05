@@ -16,6 +16,7 @@ body {
   min-width: 360px;
   margin-bottom: 9.5vw;
   max-width: 1920px;
+  min-height: 100vh;
 }
 
 img {
