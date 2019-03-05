@@ -252,6 +252,8 @@
 <script src="./cartPage.js"></script>
 <script src="https://js.tappaysdk.com/tpdirect/v4"></script>
 <script src="./facebookJavaScriptSDK.js"></script>
+<script src="./cartPageAutoFill.js"></script>
+
 <!-- <script>
   function checkConnected() {
     FB.getLoginStatus(function (response) {
@@ -387,8 +389,6 @@
         itemList.push(eachInfo);
       });
 
-
-
       order = {};
 
       let shippingInfo = document.querySelector('.cart__Container__Sub__Delivery__Select').value;
@@ -458,6 +458,8 @@
   }
 
 </script>
+
+
 <script>
   shoppingCartLocalStorage();
   cartPage();
