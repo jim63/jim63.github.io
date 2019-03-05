@@ -419,20 +419,24 @@
 
       const data__Stringify = JSON.stringify(Data);
 
-      postData(data__Stringify)
 
-      function postData(data) {
+      FB.getLoginStatus(function (response) {
+        postData(data__Stringify, response.status);
+      })
+
+
+      function postData(data, status) {
         return new Promise((resolve, reject) => {
           const xhr = new XMLHttpRequest();
 
           xhr.open("POST", 'https://api.appworks-school.tw/api/1.0/order/checkout');
           xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-          FB.getLoginStatus(function (response) {
-            if (response.status === 'connected') {
-              xhr.setRequestHeader('Authorization', 'Bearer ' + response.authResponse.accessToken)
-              console.log('Authorization');
-            }
-          })
+
+          if (status === 'connected') {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + response.authResponse.accessToken)
+            console.log('Authorization');
+          }
+
           xhr.onload = function () {
             resolve(this.responseText);
             // console.log(this.responseText);
