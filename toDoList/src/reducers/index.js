@@ -7,9 +7,11 @@ let allToDoList = [
   { text: "javascript", id: 3, status: 1 }
 ];
 
-let localList =
-  window.localStorage.todos.length > 2 ? window.localStorage.todos : [];
-// JSON.parse(window.localStorage.todos.length);
+if (!window.localStorage.todos) {
+  window.localStorage.setItem("todos", "[]");
+}
+let localList = JSON.parse(window.localStorage.todos);
+
 let id = localList.length + 1;
 
 const getList = (list = localList, action = "") => {
