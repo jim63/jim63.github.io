@@ -7,7 +7,9 @@ let allToDoList = [
   { text: "javascript", id: 3, status: 1 }
 ];
 
-let localList = JSON.parse(window.localStorage.todos);
+let localList =
+  window.localStorage.todos.length > 2 ? window.localStorage.todos : [];
+// JSON.parse(window.localStorage.todos.length);
 let id = localList.length + 1;
 
 const getList = (list = localList, action = "") => {
