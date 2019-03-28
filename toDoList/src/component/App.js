@@ -9,10 +9,20 @@ const App = () => {
     <div className="container">
       <h1>TO DO LIST</h1>
 
-      <Route path="/" exact component={() => <Input />} />
-      <Route path="/" exact component={() => <List routeStatus="0" />} />
-      <Route path="/active" component={() => <List routeStatus="1" />} />
-      <Route path="/done" component={() => <List routeStatus="2" />} />
+      <Route path="/toDoList/dist/" exact component={() => <Input />} />
+      <Route
+        path="/toDoList/dist/"
+        exact
+        component={() => <List routeStatus="0" />}
+      />
+      <Route
+        path="/toDoList/dist/active"
+        component={() => <List routeStatus="1" />}
+      />
+      <Route
+        path="/toDoList/dist/done"
+        component={() => <List routeStatus="2" />}
+      />
     </div>
   );
 };

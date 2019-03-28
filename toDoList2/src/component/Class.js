@@ -5,7 +5,7 @@ const Class = () => {
   return (
     <div className="class">
       <NavLink
-        to="/toDoList/dist/"
+        to="/"
         exact
         activeStyle={{
           fontSize: "25px",
@@ -15,7 +15,7 @@ const Class = () => {
         <div className="classAll">all</div>
       </NavLink>
       <NavLink
-        to="/toDoList/dist/active"
+        to="/active"
         exact
         activeStyle={{
           fontSize: "25px",
@@ -25,7 +25,7 @@ const Class = () => {
         <div className="classActives">Active</div>
       </NavLink>
       <NavLink
-        to="/toDoList/dist/done"
+        to="/done"
         exact
         activeStyle={{
           fontSize: "25px",
