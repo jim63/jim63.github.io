@@ -11,7 +11,7 @@ import Class from "./component/Class";
 import reducers from "./reducers";
 
 ReactDOM.render(
-  <HashRouter basename={"/toDoList/dist"}>
+  <HashRouter>
     <Provider store={createStore(reducers)}>
       <Class />
       <App />
