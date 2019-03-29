@@ -10,6 +10,7 @@ class Input extends Component {
 
     if (e.currentTarget.querySelector("input").value.trim().length > 0) {
       this.props.welcome(e.currentTarget.querySelector("input").value);
+      this.props.startNewGame();
     }
   };
 

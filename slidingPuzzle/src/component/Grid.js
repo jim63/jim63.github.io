@@ -52,7 +52,7 @@ class Grid extends Component {
         }
       }
       if (success == true) {
-        // window.localStorage.setItem('')
+        // window.localStorage.setItem();
         return <h1 style={{ color: "green", margin: "auto" }}>恭喜過關！</h1>;
       }
       if (success == false) return this.renderGrids();

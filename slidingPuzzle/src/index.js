@@ -7,6 +7,7 @@ import { HashRouter, Route } from "react-router-dom";
 import App from "./component/App";
 import Input from "./component/Input";
 import Pages from "./component/Pages";
+import Breakers from "./component/Breakers";
 
 import reducers from "./reducers";
 
@@ -32,8 +33,9 @@ ReactDOM.render(
         exact
         component={() => {
           return (
-            <div class="breakers">
-              <p class="breakerTitle">Breakers</p>
+            <div className="breakers">
+              <Breakers />
+              {/* <p class="breakerTitle">Breakers</p>
               <div class="breakers_each_t">
                 <p>Name</p>
                 <p>Moves</p>
@@ -47,7 +49,7 @@ ReactDOM.render(
                 <p>Jim2</p>
                 <p>200</p>
               </div>
-              <div class="br" />
+              <div class="br" /> */}
             </div>
           );
         }}

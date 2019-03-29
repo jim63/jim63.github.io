@@ -19,6 +19,9 @@ let gridStatusDefault = {
 };
 
 let breakersLocalStorage = window.localStorage.getItem("breaker");
+if (breakersLocalStorage === null) {
+  breakersLocalStorage = JSON.stringify([]);
+}
 
 const getList = (status = gridStatusDefault, action = "") => {
   let blankGridId = status.blankGridId;
@@ -164,14 +167,19 @@ const welcome = (name = "", action = "") => {
   return name;
 };
 
-const getBreaker = (breaker = breakersLocalStorage, action = "") => {
+const getBreaker = (breaker = "", action = "") => {
   if (action.type === "GET_BREAKER") {
-    console.log(123);
+    breaker = window.localStorage.getItem("breaker");
+    if (breakersLocalStorage === null) {
+      breakersLocalStorage = JSON.stringify([]);
+    }
   }
+  return breaker;
 };
 
 export default combineReducers({
   lists: getList,
   welcome: welcome,
-  gridStatusDefault: gridStatusDefault
+  gridStatusDefault: gridStatusDefault,
+  getBreaker: getBreaker
 });
